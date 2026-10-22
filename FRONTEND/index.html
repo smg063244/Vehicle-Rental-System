@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Vehicle Rental System
+    </title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- LOGIN -->
+<!-- ================================================= -->
+
+<div
+    id="loginPage"
+    class="login-page"
+>
+
+
+    <div class="login-card">
+
+
+        <div class="logo">
+            🚗
+        </div>
+
+
+        <h1>
+            Vehicle Rental
+        </h1>
+
+
+        <p>
+            Management System
+        </p>
+
+
+        <form id="loginForm">
+
+
+            <label>
+                Username
+            </label>
+
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                required
+            >
+
+
+            <label>
+                Password
+            </label>
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+            >
+
+
+            <button type="submit">
+                Login
+            </button>
+
+
+            <div
+                id="loginError"
+                class="error"
+            ></div>
+
+
+        </form>
+
+
+        <small>
+            Demo login: admin / 1234
+        </small>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- APPLICATION -->
+<!-- ================================================= -->
+
+<div
+    id="appPage"
+    class="app hidden"
+>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+
+        <div class="brand">
+
+
+            <div class="brand-icon">
+                🚗
+            </div>
+
+
+            <div>
+
+                <h2>
+                    VehicleHub
+                </h2>
+
+                <span>
+                    Rental System
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <nav>
+
+
+            <button
+                class="nav-btn active"
+                data-section="dashboardSection"
+            >
+                📊 Dashboard
+            </button>
+
+
+            <button
+                class="nav-btn"
+                data-section="vehiclesSection"
+            >
+                🚘 Vehicles
+            </button>
+
+
+            <button
+                class="nav-btn"
+                data-section="rentSection"
+            >
+                🔑 Rent Vehicle
+            </button>
+
+
+            <button
+                class="nav-btn"
+                data-section="activeSection"
+            >
+                📋 Active Rentals
+            </button>
+
+
+            <button
+                class="nav-btn"
+                data-section="historySection"
+            >
+                📜 Rental History
+            </button>
+
+
+        </nav>
+
+
+        <button
+            id="logoutBtn"
+            class="logout"
+        >
+            ↪ Logout
+        </button>
+
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <header>
+
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+                <p>
+                    Vehicle rental management
+                </p>
+
+            </div>
+
+
+            <div class="user">
+                👤
+                <span>
+                    Admin
+                </span>
+            </div>
+
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- DASHBOARD -->
+        <!-- ================================================= -->
+
+        <section
+            id="dashboardSection"
+            class="section active-section"
+        >
+
+
+            <div class="stats">
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Total Vehicles
+                    </span>
+
+                    <strong id="totalVehicles">
+                        0
+                    </strong>
+
+                    <small>
+                        Fleet size
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Available
+                    </span>
+
+                    <strong id="availableVehicles">
+                        0
+                    </strong>
+
+                    <small>
+                        Ready to rent
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Currently Rented
+                    </span>
+
+                    <strong id="rentedVehicles">
+                        0
+                    </strong>
+
+                    <small>
+                        Active rentals
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Fleet Value
+                    </span>
+
+                    <strong id="fleetValue">
+                        ₹0
+                    </strong>
+
+                    <small>
+                        Total vehicle value
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="revenue-card">
+
+
+                <div>
+
+                    <span>
+                        Active Rental Revenue
+                    </span>
+
+                    <h2 id="activeRevenue">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Total Revenue
+                    </span>
+
+                    <h2 id="totalRevenue">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- VEHICLES -->
+        <!-- ================================================= -->
+
+        <section
+            id="vehiclesSection"
+            class="section"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        Vehicles
+                    </h2>
+
+                    <p>
+                        Manage your vehicle fleet
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="openVehicleModal()"
+                >
+                    + Add Vehicle
+                </button>
+
+
+            </div>
+
+
+            <div
+                id="vehicleGrid"
+                class="vehicle-grid"
+            ></div>
+
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- RENT -->
+        <!-- ================================================= -->
+
+        <section
+            id="rentSection"
+            class="section"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        Rent a Vehicle
+                    </h2>
+
+                    <p>
+                        Create a new rental
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-card">
+
+
+                <form id="rentalForm">
+
+
+                    <div class="form-grid">
+
+
+                        <div>
+
+                            <label>
+                                Vehicle
+                            </label>
+
+                            <select
+                                id="rentalVehicle"
+                                required
+                            >
+
+                                <option value="">
+                                    Select vehicle
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Customer Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerPhone"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Start Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="startDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                End Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="endDate"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="rental-preview">
+
+
+                        <div>
+
+                            <span>
+                                Rental Duration
+                            </span>
+
+                            <strong id="rentalDays">
+                                0 days
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Rent / Day
+                            </span>
+
+                            <strong id="rentPerDay">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Total Cost
+                            </span>
+
+                            <strong id="totalCost">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn"
+                        type="submit"
+                    >
+                        Confirm Rental
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- ACTIVE RENTALS -->
+        <!-- ================================================= -->
+
+        <section
+            id="activeSection"
+            class="section"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        Active Rentals
+                    </h2>
+
+                    <p>
+                        Vehicles currently rented
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div
+                id="activeRentals"
+                class="table-container"
+            ></div>
+
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- HISTORY -->
+        <!-- ================================================= -->
+
+        <section
+            id="historySection"
+            class="section"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        Rental History
+                    </h2>
+
+                    <p>
+                        Completed rentals
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div
+                id="historyRentals"
+                class="table-container"
+            ></div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- VEHICLE MODAL -->
+<!-- ================================================= -->
+
+<div
+    id="vehicleModal"
+    class="modal hidden"
+>
+
+
+    <div class="modal-card">
+
+
+        <div class="modal-header">
+
+
+            <h2>
+                Add Vehicle
+            </h2>
+
+
+            <button
+                type="button"
+                onclick="closeVehicleModal()"
+            >
+                ×
+            </button>
+
+
+        </div>
+
+
+        <form id="vehicleForm">
+
+
+            <label>
+                Vehicle Name
+            </label>
+
+            <input
+                type="text"
+                id="vehicleName"
+                placeholder="Toyota Innova"
+                required
+            >
+
+
+            <label>
+                Vehicle Type
+            </label>
+
+            <select
+                id="vehicleType"
+                required
+            >
+
+                <option value="">
+                    Select type
+                </option>
+
+                <option>
+                    Car
+                </option>
+
+                <option>
+                    SUV
+                </option>
+
+                <option>
+                    Bike
+                </option>
+
+                <option>
+                    Van
+                </option>
+
+            </select>
+
+
+            <label>
+                Registration Number
+            </label>
+
+            <input
+                type="text"
+                id="registrationNumber"
+                placeholder="KA09AB1234"
+                required
+            >
+
+
+            <label>
+                Vehicle Value (₹)
+            </label>
+
+            <input
+                type="number"
+                id="vehicleValue"
+                min="1"
+                required
+            >
+
+
+            <label>
+                Rent Per Day (₹)
+            </label>
+
+            <input
+                type="number"
+                id="rentPerDayInput"
+                min="1"
+                required
+            >
+
+
+            <div class="modal-actions">
+
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="closeVehicleModal()"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Add Vehicle
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+<script src="./script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fb;
+
+    color: #1f2937;
+
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+}
+
+
+.login-card {
+
+    width: 390px;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+
+}
+
+
+.logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 35px;
+
+    background: #e8efff;
+
+}
+
+
+.login-card h1 {
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.login-card > p {
+
+    color: #6b7280;
+
+    margin-bottom: 30px;
+
+}
+
+
+.login-card form {
+
+    text-align: left;
+
+}
+
+
+.login-card label {
+
+    display: block;
+
+    margin: 15px 0 7px;
+
+    font-weight: 600;
+
+}
+
+
+.login-card input {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.login-card input:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+.login-card button {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+.login-card button:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+.login-card small {
+
+    display: block;
+
+    margin-top: 22px;
+
+    color: #6b7280;
+
+}
+
+
+.error {
+
+    color: #dc2626;
+
+    font-size: 14px;
+
+    margin-top: 12px;
+
+    min-height: 18px;
+
+}
+
+
+/* =====================================================
+   APPLICATION
+===================================================== */
+
+.app {
+
+    min-height: 100vh;
+
+    display: flex;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    width: 250px;
+
+    min-height: 100vh;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 25px 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 5px 10px 30px;
+
+}
+
+
+.brand-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    background: #2563eb;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+}
+
+
+.brand h2 {
+
+    font-size: 20px;
+
+}
+
+
+.brand span {
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+}
+
+
+.sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.nav-btn {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #d1d5db;
+
+    text-align: left;
+
+    font-size: 14px;
+
+}
+
+
+.nav-btn:hover {
+
+    background: #1f2937;
+
+    color: white;
+
+}
+
+
+.nav-btn.active {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+.logout {
+
+    margin-top: auto;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #dc2626;
+
+    color: white;
+
+    font-weight: 600;
+
+}
+
+
+.logout:hover {
+
+    background: #b91c1c;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main {
+
+    flex: 1;
+
+    padding: 30px;
+
+    min-width: 0;
+
+}
+
+
+header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+header h1 {
+
+    font-size: 28px;
+
+}
+
+
+header p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+}
+
+
+.user {
+
+    background: white;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section {
+
+    display: none;
+
+}
+
+
+.section.active-section {
+
+    display: block;
+
+}
+
+
+.section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-header h2 {
+
+    font-size: 24px;
+
+}
+
+
+.section-header p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.stat-card {
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.stat-card span {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+.stat-card strong {
+
+    display: block;
+
+    margin: 10px 0;
+
+    font-size: 30px;
+
+}
+
+
+.stat-card small {
+
+    color: #9ca3af;
+
+}
+
+
+.revenue-card {
+
+    margin-top: 20px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.revenue-card span {
+
+    color: #6b7280;
+
+}
+
+
+.revenue-card h2 {
+
+    margin-top: 8px;
+
+    font-size: 28px;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn {
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 600;
+
+}
+
+
+.primary-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+.secondary-btn {
+
+    border: 1px solid #d1d5db;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #374151;
+
+    font-weight: 600;
+
+}
+
+
+.secondary-btn:hover {
+
+    background: #f3f4f6;
+
+}
+
+
+/* =====================================================
+   VEHICLES
+===================================================== */
+
+.vehicle-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.vehicle-card {
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.vehicle-card h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.vehicle-card p {
+
+    margin: 9px 0;
+
+    color: #4b5563;
+
+}
+
+
+.vehicle-card strong {
+
+    color: #1f2937;
+
+}
+
+
+.available {
+
+    color: #16a34a;
+
+    font-weight: 700;
+
+}
+
+
+.rented {
+
+    color: #dc2626;
+
+    font-weight: 700;
+
+}
+
+
+.vehicle-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.rent-btn,
+.delete-btn {
+
+    flex: 1;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.rent-btn {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+.rent-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+.delete-btn {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+}
+
+
+.delete-btn:hover {
+
+    background: #fecaca;
+
+}
+
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+.form-card {
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.form-grid label,
+.form-card label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.form-grid input,
+.form-grid select,
+.form-card input,
+.form-card select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    background: white;
+
+    outline: none;
+
+}
+
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-card input:focus,
+.form-card select:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+.rental-preview {
+
+    margin: 25px 0;
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.rental-preview span {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+.rental-preview strong {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
+   RENTALS
+===================================================== */
+
+.table-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(300px, 1fr)
+        );
+
+    gap: 18px;
+
+}
+
+
+.rental-card {
+
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.rental-card h3 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.rental-card p {
+
+    margin: 8px 0;
+
+    color: #4b5563;
+
+}
+
+
+.return-btn {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-weight: 600;
+
+}
+
+
+.return-btn:hover {
+
+    background: #15803d;
+
+}
+
+
+.empty-message {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 1000;
+
+}
+
+
+.modal-card {
+
+    width: 450px;
+
+    max-width: 90%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+}
+
+
+.modal-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+
+.modal-header h2 {
+
+    font-size: 22px;
+
+}
+
+
+.modal-header button {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f3f4f6;
+
+    font-size: 25px;
+
+}
+
+
+.modal-card label {
+
+    display: block;
+
+    margin: 14px 0 7px;
+
+    font-weight: 600;
+
+}
+
+
+.modal-card input,
+.modal-card select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    outline: none;
+
+}
+
+
+.modal-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 210px;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .app {
+
+        flex-direction: column;
+
+    }
+
+
+    .sidebar {
+
+        width: 100%;
+
+        min-height: auto;
+
+    }
+
+
+    .sidebar nav {
+
+        flex-direction: row;
+
+        overflow-x: auto;
+
+    }
+
+
+    .nav-btn {
+
+        white-space: nowrap;
+
+    }
+
+
+    .logout {
+
+        margin-top: 15px;
+
+    }
+
+
+    .main {
+
+        padding: 20px;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .rental-preview {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .revenue-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
