@@ -207,7 +207,7 @@ def get_me(
 # =====================================================
 
 BASE_DIR = Path(__file__).resolve().parent
-FRONTEND_DIR = BASE_DIR / "frontend"
+FRONTEND_DIR = BASE_DIR / "FRONTEND"
 
 from fastapi.staticfiles import StaticFiles
 
